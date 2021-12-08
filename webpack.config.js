@@ -1,6 +1,7 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESlintPlugin = require('eslint-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -19,7 +20,18 @@ const baseConfig = {
         use: 'ts-loader',
         include: [path.resolve(__dirname, 'src')],
         exclude: /node_modules/
-      }
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          MiniCssExtractPlugin.loader, 
+          {
+            loader: 'css-loader',
+            options: {url: false}
+          }, 
+          'sass-loader'
+        ]
+      },
     ],
   },
   resolve: {
@@ -43,6 +55,9 @@ const baseConfig = {
           to: path.resolve(__dirname, './dist/assets')
         }
       ]
+    }),
+    new MiniCssExtractPlugin({
+      filename: './style.css'
     }),
   ],
 };
