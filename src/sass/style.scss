@@ -4,15 +4,20 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  font-family: 'Comfortaa', cursive;
+}
+
+body {
+  background-color: $main-color;
 }
 
 .container {
   width: 1440px;
   height: 100vh;
+  margin: 0 auto; 
+  color: $white;
 }
 
-h1 {
-  font-size: 100px;
-}
 
-@import "blocks/toys";
+@import "blocks/header";
+@import "blocks/main";

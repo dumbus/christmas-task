@@ -4,12 +4,52 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <title>christmas-task</title>
 </head>
 <body>
   <div class="container">
-    <h1>Hello</h1>
+    <header class="header">
+      <nav class="header-nav">
+        <div class="header-nav-item header-nav-logo" src="./assets/svg/tree.svg" alt="tree"></div>
+        <div class="header-nav-item header-nav-item-active header-nav-toys">Игрушки</div>
+        <div class="header-nav-item header-nav-tree">Ёлка</div>
+      </nav>
+      <div class="header-controls">
+        <input type="search" class="header-controls-search" autocomplete="off">
+        <div class="header-controls-favourites">
+          <span>0</span>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="controls">
+        <div class="filters-values">
+          <div class="controls-title">Фильтры по значению</div>
+          <div class="shape">
+            <div class="controls-subtitle">Форма:</div>
+            <div class="shape-buttons">
+              <button data-filter="шар"></button>
+              <button data-filter="колокольчик"></button>
+              <button data-filter="шишка"></button>
+              <button data-filter="снежинка"></button>
+              <button data-filter="фигурка"></button>
+            </div>
+          </div>
+          <div class="color">
+            
+          </div>
+          <div class="size">
+            
+          </div>
+        </div>
+        <div class="filters-range"></div>
+        <div class="filters-sort"></div>
+      </div>
+    </main>
   </div>
   <script src="index.js"></script>
 </body>

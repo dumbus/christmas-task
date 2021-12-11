@@ -1,0 +1,79 @@
+.header {
+  width: 100%;
+  height: 70px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-item {
+      position: relative;
+      padding: 20px;
+      font-size: 20px;
+      cursor: pointer;
+      &-active::after {
+        content: "";
+        position: absolute;
+        bottom: 10px;
+        left: 15px;
+        right: 15px;
+        height: 3px;
+        background-color: $blue;
+      }
+    }
+    &-logo {
+      width: 40px;
+      height: 60px;
+      padding: 0;
+      background-image: url(./assets/svg/tree.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+  &-controls {
+    display: flex;
+    align-items: center;
+    &-search {
+      width: 380px;
+      height: 40px;
+      padding: 5px 25px;
+      margin: 10px 0;
+      margin-right: 30px;
+      outline: 0;
+      border-radius: 20px;
+      border: 1px solid $bg-blue;
+      color: #fff;
+      font-size: 18px;
+      background-color: rgba(31, 112, 127, .3);
+      background-image: url(./assets/svg/search.svg);
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: 330px center;
+      backdrop-filter: blur(6px);
+    }
+    &-favourites {
+      width: 48px;
+      height: 60px;
+      background-image: url(./assets/svg/ball-2.svg);
+      background-size: 48px 60px;
+      background-position: left -8px;
+      background-repeat: no-repeat;
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+        margin-left: 4px;
+        border-radius: 100%;
+        text-align: center;
+        font-size: 20px;
+        background-color: $bg-blue;
+      }
+    }
+  }
+}
