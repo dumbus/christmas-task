@@ -27,27 +27,396 @@
     </header>
     <main class="main">
       <div class="controls">
-        <div class="filters-values">
+        <div class="filters controls-item">
           <div class="controls-title">Фильтры по значению</div>
-          <div class="shape">
+          <div class="shape filters-item">
             <div class="controls-subtitle">Форма:</div>
             <div class="shape-buttons">
-              <button data-filter="шар"></button>
-              <button data-filter="колокольчик"></button>
-              <button data-filter="шишка"></button>
-              <button data-filter="снежинка"></button>
-              <button data-filter="фигурка"></button>
+              <button class="shape-buttons-btn" data-filter="шар"></button>
+              <button class="shape-buttons-btn" data-filter="колокольчик"></button>
+              <button class="shape-buttons-btn" data-filter="шишка"></button>
+              <button class="shape-buttons-btn" data-filter="снежинка"></button>
+              <button class="shape-buttons-btn" data-filter="фигурка"></button>
             </div>
           </div>
-          <div class="color">
-            
+          <div class="color filters-item">
+            <div class="controls-subtitle">Цвет:</div>
+            <div class="color-buttons">
+              <button class="color-buttons-btn" data-filter="белый"></button>
+              <button class="color-buttons-btn" data-filter="желтый"></button>
+              <button class="color-buttons-btn" data-filter="красный"></button>
+              <button class="color-buttons-btn" data-filter="синий"></button>
+              <button class="color-buttons-btn" data-filter="зелёный"></button>
+            </div>
           </div>
-          <div class="size">
-            
+          <div class="size filters-item">
+            <div class="controls-subtitle">Размер:</div>
+            <div class="size-buttons">
+              <button class="size-buttons-btn" data-filter="большой"></button>
+              <button class="size-buttons-btn" data-filter="средний"></button>
+              <button class="size-buttons-btn" data-filter="малый"></button>
+            </div>
+          </div>
+          <div class="filters-favourite filters-item">
+            <div class="controls-subtitle">Только любимые:</div>
+            <input class="filters-favourite-input" type="checkbox" id="checkbox">
+            <label class="filters-favourite-label" for="checkbox"></label>
           </div>
         </div>
-        <div class="filters-range"></div>
-        <div class="filters-sort"></div>
+
+        <div class="range controls-item">
+          <div class="controls-title">Фильтры по диапазону</div>
+          <div class="count">
+            <div class="slider-subtitle">Количество экземпляров:</div>
+            <div class="slider-container">
+              <input type="number" id="count-output-0" class="slider-output" value="1" readonly>
+              <div id="count-slider"></div>
+              <input type="number" id="count-output-1" class="slider-output" value="12" readonly>
+            </div>
+
+            <div class="slider-subtitle">Год приобретения:</div>
+            <div class="slider-container">
+              <input type="number" id="year-output-0" class="slider-output" value="1940" readonly>
+              <div id="year-slider"></div>
+              <input type="number" id="year-output-1" class="slider-output" value="2020" readonly>
+            </div>
+          </div>
+        </div>
+
+        <div class="sort controls-item">
+          <div class="controls-title">Сортировка</div>
+          <select class="sort-select">
+            <option selected value="sort-name-growth">По названию от «А» до «Я»</option>
+            <option value="sort-name-decrease">По названию от «Я» до «А»</option>
+            <option value="sort-year-growth">По количеству по возрастанию</option>
+            <option value="sort-year-decrease">По количеству по убыванию</option>
+          </select>
+          <button class="sort-reset">Сброс фильтров</button>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
+
+        <div class="card" data-num="1">
+          <h2 class="card-title">Большой шар с рисунком</h2>
+          <img src="./assets/toys/1.png" alt="toy" class="card-img">
+          <div class="card-description">
+            <p class="count">Количество: <span>2</span></p>
+            <p class="year">Год покупки: <span>1660</span></p>
+            <p class="shape">Форма: <span>шар</span></p>
+            <p class="color">Цвет: <span>желтый</span></p>
+            <p class="size">Размер: <span>большой</span></p>
+            <p class="favourite">Любимая: <span>нет</span></p>
+          </div>
+          <div class="ribbon"></div>
+        </div>
       </div>
     </main>
   </div>

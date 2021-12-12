@@ -18,6 +18,7 @@ body {
   color: $white;
 }
 
-
+@import "nouislider/dist/nouislider";
 @import "blocks/header";
 @import "blocks/main";
+@import "blocks/sliders.scss";
