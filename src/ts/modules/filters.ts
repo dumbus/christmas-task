@@ -1,5 +1,6 @@
 import data from '../../data.json';
 import { ICardParams } from './cards';
+import { updateFavorites, renderCards } from './utils';
 
 interface IFiltersSettings {
   shapeFiltersApplied: boolean[];
@@ -21,7 +22,7 @@ const filters = () => {
     shapeFiltersApplied: [false, false, false, false, false],
     colorFiltersApplied: [false, false, false, false, false],
     sizeFiltersApplied: [false, false, false],
-    favouriteFiltersApplied: true
+    favouriteFiltersApplied: false
   };
 
   const filtersValues: IfilterValues = {
@@ -98,9 +99,31 @@ const filters = () => {
     }
 
     console.log(cardsObjArr);
+    return cardsObjArr;
   }
 
   filter(data);
+  renderCards(cardsObjArr);
+
+  const shapeFilterButtons = document.querySelectorAll('.shape-buttons-btn');
+  const cardsContainer = document.querySelector('.cards');
+
+  for (let i = 0; i < shapeFilterButtons.length; i++) {
+    shapeFilterButtons[i].addEventListener('click', () => {
+      if (filtersSettings.shapeFiltersApplied[i] === false) {
+        shapeFilterButtons[i].classList.add('shape-buttons-btn-active');
+      } else {
+        shapeFilterButtons[i].classList.remove('shape-buttons-btn-active');
+      }
+      filtersSettings.shapeFiltersApplied[i] = !filtersSettings.shapeFiltersApplied[i];
+      // filtersSettings.shapeFiltersApplied[i] = !filtersSettings.shapeFiltersApplied[i];
+      // const filteredArray = filter(data, filtersSettings);
+      // cardsContainer.innerHTML = '';
+      // console.log(filteredArray);
+      // console.log(filtersSettings);
+      // utils.renderCards(filteredArray);
+    });
+  }
 };
 
 export default filters;

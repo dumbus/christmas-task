@@ -54,6 +54,9 @@
     &:hover {
       filter: invert(75%) sepia(39%) saturate(347%) hue-rotate(8deg) brightness(92%) contrast(10%);
     }
+    &-active {
+      filter: invert(42%) sepia(55%) saturate(579%) hue-rotate(141deg) brightness(99%) contrast(86%);
+    }
   }
   .color-buttons-btn {
     width: 30px;

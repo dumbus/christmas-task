@@ -1,19 +1,9 @@
 import data from '../../data.json';
-import { Card } from './cards';
-import { utils } from './utils';
+import filters from './filters';
 
 const toys = () => {
-  function renderCards() {
-    for (let i = 0; i < data.length; i++) {
-      const card = new Card(data[i]);
-      const cardHTML = card.createCard();
-      card.insertCard();
-
-      utils.updateFavorites(cardHTML);
-    }
-  }
-
-  renderCards();
+  // utils.renderCards(data);
+  filters();
 };
 
 export default toys;
