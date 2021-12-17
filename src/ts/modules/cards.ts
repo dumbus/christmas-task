@@ -1,4 +1,4 @@
-const cardsContainer = document.querySelector('.cards') as HTMLElement;
+const cardsContainer = document.querySelector('.cards');
 
 export interface ICardParams {
   num: string;

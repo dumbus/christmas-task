@@ -24,7 +24,7 @@
     "@typescript-eslint/no-explicit-any": 2,
     "@typescript-eslint/lines-between-class-members": "off",
     "@typescript-eslint/comma-dangle": "off",
-    // "@typescript-eslint/no-loop-func": "off",
+    "@typescript-eslint/no-loop-func": "off",
     "prettier/prettier": ["error", {
       "trailingComma": "none",
       "semi": true,
