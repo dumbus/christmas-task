@@ -1,5 +1,6 @@
 import * as noUiSlider from 'nouislider';
 import { filters, defaultfiltersSettings, IFiltersSettings } from './toysUtils/filters';
+import search from './toysUtils/search';
 
 const toys = () => {
   const countSlider: noUiSlider.target = document.getElementById('count-slider');
@@ -43,7 +44,6 @@ const toys = () => {
         localStorage.setItem('filtersSettings', JSON.stringify(filtersSettings));
         filters();
       }
-      console.log(filtersSettings);
     });
   }
 
@@ -97,6 +97,7 @@ const toys = () => {
   });
 
   (<HTMLInputElement>document.querySelector('.header-controls-search')).focus();
+  search();
 };
 
 export default toys;

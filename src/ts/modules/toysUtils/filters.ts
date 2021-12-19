@@ -34,6 +34,7 @@ export const defaultfiltersSettings: IFiltersSettings = {
 export const filters = () => {
   let currentObjArr: ICardParams[] = [];
   const cardsContainer = document.querySelector('.cards');
+  const searchInput = <HTMLInputElement>document.querySelector('.header-controls-search');
 
   if (localStorage.getItem('filtersSettings') === null) {
     localStorage.setItem('filtersSettings', JSON.stringify(defaultfiltersSettings));
@@ -138,6 +139,18 @@ export const filters = () => {
         resultArr.push(toy);
       }
     });
+    cardsObjArr = resultArr;
+
+    if (searchInput.value !== '') {
+      const substring = searchInput.value.toLowerCase();
+      resultArr = [];
+      cardsObjArr.forEach((toy) => {
+        const cardNameLowercase = toy.name.toLowerCase();
+        if (cardNameLowercase.indexOf(substring) !== -1 && resultArr.indexOf(toy) === -1) {
+          resultArr.push(toy);
+        }
+      });
+    }
     cardsObjArr = resultArr;
 
     if (cardsObjArr.length === 0) {
