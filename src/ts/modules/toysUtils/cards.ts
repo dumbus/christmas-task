@@ -55,7 +55,7 @@ export class Card {
 
     this.count = document.createElement('p');
     this.count.classList.add('count');
-    this.count.innerHTML = `Количество: <span>${this.cardParams.num}</span>`;
+    this.count.innerHTML = `Количество: <span>${this.cardParams.count}</span>`;
     this.description.append(this.count);
 
     this.year = document.createElement('p');

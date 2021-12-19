@@ -1,4 +1,3 @@
-import data from '../../data.json';
 import { Card, ICardParams } from './cards';
 
 let favoritesNumbers: number[];
