@@ -14,22 +14,22 @@ export function handleFavorites(card: HTMLElement) {
   const modal = document.querySelector('.modal');
 
   card.addEventListener('click', () => {
-    if (favoritesNumbers.length === 20) {
-      modal.classList.remove('hidden');
-      modal.classList.add('modalAnimation');
+    const cardNum = card.getAttribute('data-num');
 
-      modal.addEventListener('animationend', () => {
-        modal.classList.remove('modalAnimation');
-        modal.classList.add('hidden');
-      });
+    if (card.classList.contains('active')) {
+      card.classList.remove('active');
+      const indexToDelete = favoritesNumbers.indexOf(+cardNum);
+      favoritesNumbers.splice(indexToDelete, 1);
+      localStorage.setItem('favoritesNumbers', JSON.stringify(favoritesNumbers));
     } else {
-      const cardNum = card.getAttribute('data-num');
+      if (favoritesNumbers.length === 20) {
+        modal.classList.remove('hidden');
+        modal.classList.add('modalAnimation');
 
-      if (card.classList.contains('active')) {
-        card.classList.remove('active');
-        const indexToDelete = favoritesNumbers.indexOf(+cardNum);
-        favoritesNumbers.splice(indexToDelete, 1);
-        localStorage.setItem('favoritesNumbers', JSON.stringify(favoritesNumbers));
+        modal.addEventListener('animationend', () => {
+          modal.classList.remove('modalAnimation');
+          modal.classList.add('hidden');
+        });
       } else {
         card.classList.add('active');
         if (favoritesNumbers.indexOf(+cardNum) === -1) {
