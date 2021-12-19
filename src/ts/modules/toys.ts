@@ -1,12 +1,16 @@
 import * as noUiSlider from 'nouislider';
-import filters from './toysUtils/filters';
+import { filters, defaultfiltersSettings, IFiltersSettings } from './toysUtils/filters';
 
 const toys = () => {
   const countSlider: noUiSlider.target = document.getElementById('count-slider');
   const yearSlider: noUiSlider.target = document.getElementById('year-slider');
+  let filtersSettings: IFiltersSettings;
 
-  filters();
-  const filtersSettings = JSON.parse(localStorage.getItem('filtersSettings'));
+  if (localStorage.getItem('filtersSettings') === null) {
+    localStorage.setItem('filtersSettings', JSON.stringify(defaultfiltersSettings));
+  } else {
+    filtersSettings = JSON.parse(localStorage.getItem('filtersSettings'));
+  }
 
   if (countSlider) {
     noUiSlider.create(countSlider, {
@@ -26,17 +30,20 @@ const toys = () => {
     countSlider.noUiSlider.on('update', (values, handle) => {
       countOutputs[handle].value = `${Math.round(<number>values[handle])}`;
 
+      filtersSettings = JSON.parse(localStorage.getItem('filtersSettings'));
+
       if (handle === 0) {
-        filtersSettings.countMin = countOutputs[handle].value;
+        filtersSettings.countMin = +countOutputs[handle].value;
         localStorage.setItem('filtersSettings', JSON.stringify(filtersSettings));
         filters();
       }
 
       if (handle === 1) {
-        filtersSettings.countMax = countOutputs[handle].value;
+        filtersSettings.countMax = +countOutputs[handle].value;
         localStorage.setItem('filtersSettings', JSON.stringify(filtersSettings));
         filters();
       }
+      console.log(filtersSettings);
     });
   }
 
@@ -58,19 +65,38 @@ const toys = () => {
     yearSlider.noUiSlider.on('update', (values, handle) => {
       yearOutputs[handle].value = `${Math.round(<number>values[handle])}`;
 
+      filtersSettings = JSON.parse(localStorage.getItem('filtersSettings'));
+
       if (handle === 0) {
-        filtersSettings.yearMin = yearOutputs[handle].value;
+        filtersSettings.yearMin = +yearOutputs[handle].value;
         localStorage.setItem('filtersSettings', JSON.stringify(filtersSettings));
         filters();
       }
 
       if (handle === 1) {
-        filtersSettings.yearMax = yearOutputs[handle].value;
+        filtersSettings.yearMax = +yearOutputs[handle].value;
         localStorage.setItem('filtersSettings', JSON.stringify(filtersSettings));
         filters();
       }
     });
   }
+
+  const resetFiltersBtn = document.querySelector('.sort-reset-filters');
+  const resetSettingsBtn = document.querySelector('.sort-reset-settings');
+
+  resetFiltersBtn.addEventListener('click', () => {
+    localStorage.setItem('filtersSettings', JSON.stringify(defaultfiltersSettings));
+    filters();
+    countSlider.noUiSlider.set([1, 12]);
+    yearSlider.noUiSlider.set([1940, 2020]);
+  });
+
+  resetSettingsBtn.addEventListener('click', () => {
+    localStorage.clear();
+    location.reload();
+  });
+
+  (<HTMLInputElement>document.querySelector('.header-controls-search')).focus();
 };
 
 export default toys;

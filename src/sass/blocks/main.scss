@@ -217,7 +217,6 @@
   }
   &-reset {
     position: absolute;
-    bottom: 40px;
     left: 20px;
     width: 250px;
     height: 40px;
@@ -227,6 +226,15 @@
     font-size: 20px;
     color: $white;
     cursor: pointer;
+    &:hover {
+      box-shadow: 0 0 15px rgba(31, 112, 127, 1);
+    }
+    &-filters {
+      bottom: 40px;
+    }
+    &-settings {
+      bottom: 100px;
+    }
   }
 }
 

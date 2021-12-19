@@ -45,14 +45,26 @@
       outline: 0;
       border-radius: 20px;
       border: 1px solid $bg-blue;
-      color: #fff;
+      color: $white;
       font-size: 18px;
       background-color: rgba(31, 112, 127, .3);
-      background-image: url(./assets/svg/search.svg);
-      background-size: 20px;
-      background-repeat: no-repeat;
-      background-position: 330px center;
       backdrop-filter: blur(6px);
+      &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        height: 1em;
+        width: 1em;
+        border-radius: 50em;
+        background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg) no-repeat 50% 50%;
+        background-size: contain;
+        opacity: 0;
+        pointer-events: none;
+        cursor: pointer;
+      }
+      &:focus::-webkit-search-cancel-button {
+        opacity: 1;
+        filter: invert(1);
+        pointer-events: all;
+      }
     }
     &-favourites {
       width: 48px;

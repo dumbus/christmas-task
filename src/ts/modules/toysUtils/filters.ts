@@ -1,16 +1,17 @@
 import data from '../../../data.json';
 import { ICardParams } from './cards';
 import { renderCards } from './render';
+import sort from './sort';
 
 export interface IFiltersSettings {
   shapeFiltersApplied: boolean[];
   colorFiltersApplied: boolean[];
   sizeFiltersApplied: boolean[];
   favouriteFiltersApplied: boolean;
-  countMin: number;
   countMax: number;
-  yearMin: number;
+  countMin: number;
   yearMax: number;
+  yearMin: number;
 }
 
 interface IfilterValues {
@@ -19,20 +20,20 @@ interface IfilterValues {
   sizeFiltersValues: string[];
 }
 
+export const defaultfiltersSettings: IFiltersSettings = {
+  shapeFiltersApplied: [false, false, false, false, false],
+  colorFiltersApplied: [false, false, false, false, false],
+  sizeFiltersApplied: [false, false, false],
+  favouriteFiltersApplied: false,
+  countMax: 12,
+  countMin: 1,
+  yearMax: 2020,
+  yearMin: 1940
+};
+
 export const filters = () => {
   let currentObjArr: ICardParams[] = [];
   const cardsContainer = document.querySelector('.cards');
-
-  const defaultfiltersSettings: IFiltersSettings = {
-    shapeFiltersApplied: [false, false, false, false, false],
-    colorFiltersApplied: [false, false, false, false, false],
-    sizeFiltersApplied: [false, false, false],
-    favouriteFiltersApplied: false,
-    countMin: 1,
-    countMax: 12,
-    yearMin: 1940,
-    yearMax: 2020
-  };
 
   if (localStorage.getItem('filtersSettings') === null) {
     localStorage.setItem('filtersSettings', JSON.stringify(defaultfiltersSettings));
@@ -122,8 +123,6 @@ export const filters = () => {
         resultArr.indexOf(toy) === -1
       ) {
         resultArr.push(toy);
-      } else {
-        console.log(filtersSettings.countMax >= toy.count);
       }
     });
     cardsObjArr = resultArr;
@@ -147,6 +146,7 @@ export const filters = () => {
       cardsContainer.innerHTML = '';
     }
 
+    sort(cardsObjArr);
     return cardsObjArr;
   }
 
@@ -217,24 +217,52 @@ export const filters = () => {
   for (let i = 0; i < shapeFilterButtons.length; i++) {
     if (filtersSettings.shapeFiltersApplied[i] === true) {
       shapeFilterButtons[i].classList.add('shape-buttons-btn-active');
+    } else {
+      shapeFilterButtons[i].classList.remove('shape-buttons-btn-active');
     }
   }
 
   for (let i = 0; i < colorFilterButtons.length; i++) {
     if (filtersSettings.colorFiltersApplied[i] === true) {
       colorFilterButtons[i].classList.add('color-buttons-btn-active');
+    } else {
+      colorFilterButtons[i].classList.remove('color-buttons-btn-active');
     }
   }
 
   for (let i = 0; i < sizeFilterButtons.length; i++) {
     if (filtersSettings.sizeFiltersApplied[i] === true) {
       sizeFilterButtons[i].classList.add('size-buttons-btn-active');
+    } else {
+      sizeFilterButtons[i].classList.remove('size-buttons-btn-active');
     }
   }
 
   if (filtersSettings.favouriteFiltersApplied === true) {
     favoriteFilterButton.classList.add('filters-favourite-label-active');
+  } else {
+    favoriteFilterButton.classList.remove('filters-favourite-label-active');
   }
+
+  const sortSelect = <HTMLInputElement>document.querySelector('.sort-select');
+  let sortOption = 'sort-name-growth';
+
+  if (localStorage.getItem('sortOption') === null) {
+    localStorage.setItem('sortOption', sortOption);
+  } else {
+    sortOption = localStorage.getItem('sortOption');
+  }
+
+  sortSelect.value = sortOption;
+
+  sortSelect.addEventListener('change', () => {
+    sortOption = sortSelect.value;
+    localStorage.setItem('sortOption', sortOption);
+
+    currentObjArr = filter();
+    renderCards(currentObjArr);
+    sort(currentObjArr);
+  });
 };
 
 export default filters;
