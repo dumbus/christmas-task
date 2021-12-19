@@ -11,10 +11,17 @@ if (localStorage.getItem('favoritesNumbers') !== null) {
 }
 
 export function handleFavorites(card: HTMLElement) {
+  const modal = document.querySelector('.modal');
+
   card.addEventListener('click', () => {
     if (favoritesNumbers.length === 20) {
-      // TODO: function with modal
-      console.log('more than 20');
+      modal.classList.remove('hidden');
+      modal.classList.add('modalAnimation');
+
+      modal.addEventListener('animationend', () => {
+        modal.classList.remove('modalAnimation');
+        modal.classList.add('hidden');
+      });
     } else {
       const cardNum = card.getAttribute('data-num');
 
@@ -39,7 +46,6 @@ export function updateFavorites() {
   const cardsItems = document.querySelectorAll('.card');
   cardsItems.forEach((cardItem) => {
     const cardNum = cardItem.getAttribute('data-num');
-    console.log(cardItem);
 
     if (favoritesNumbers.indexOf(+cardNum) !== -1) {
       cardItem.classList.add('active');

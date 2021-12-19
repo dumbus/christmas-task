@@ -12,6 +12,7 @@ body {
 }
 
 .container {
+  position: relative;
   width: 1440px;
   height: 100vh;
   margin: 0 auto; 
@@ -22,4 +23,6 @@ body {
 @import "blocks/header";
 @import "blocks/main";
 @import "blocks/footer";
-@import "blocks/sliders.scss";
+@import "blocks/sliders";
+@import "blocks/modal";
+@import "blocks/animations";

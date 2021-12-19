@@ -1,6 +1,6 @@
 import data from '../../data.json';
 import { ICardParams } from './cards';
-import { handleFavorites, renderCards } from './utils';
+import { renderCards } from './utils';
 
 interface IFiltersSettings {
   shapeFiltersApplied: boolean[];
