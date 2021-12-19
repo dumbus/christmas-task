@@ -13,9 +13,10 @@ body {
 
 .container {
   position: relative;
-  width: 1440px;
+  width: 1410px;
   height: 100vh;
   margin: 0 auto; 
+  padding: 0 5px;
   color: $white;
 }
 
@@ -26,3 +27,4 @@ body {
 @import "blocks/sliders";
 @import "blocks/modal";
 @import "blocks/animations";
+@import "blocks/media";
