@@ -66,7 +66,7 @@
     border: none;
     border-radius: 5px;
     outline: none;
-    transition: outline 0.3s;
+    transition: transform 0.3s;
     cursor: pointer;
     &:nth-child(1) {
       background-color: $white;
@@ -84,21 +84,10 @@
       background-color: $green;
     }
     &:hover {
-      outline: 1px solid $white;
+      transform: scale(1.2);
     }
     &-active {
-      &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 5px;
-        left: 9px;
-        width: 6px;
-        height: 10px;
-        border: solid black;
-        border-width: 0 4px 4px 0;
-        transform: rotate(45deg);
-      }
+      outline: 5px solid black;
     }
   }
   .size-buttons-btn {
