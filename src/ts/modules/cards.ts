@@ -13,6 +13,7 @@ export interface ICardParams {
 
 export class Card {
   cardParams: ICardParams;
+  num: string;
   card: HTMLElement;
   title: HTMLElement;
   img: HTMLElement;
@@ -28,6 +29,7 @@ export class Card {
 
   constructor(cardParams: ICardParams) {
     this.cardParams = cardParams;
+    this.num = cardParams.num;
   }
 
   createCard() {
