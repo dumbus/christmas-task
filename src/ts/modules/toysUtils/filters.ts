@@ -34,7 +34,7 @@ export const defaultfiltersSettings: IFiltersSettings = {
 export const filters = () => {
   let currentObjArr: ICardParams[] = [];
   const cardsContainer = document.querySelector('.cards');
-  const searchInput = <HTMLInputElement>document.querySelector('.header-controls-search');
+  const searchInput = <HTMLInputElement>document.querySelector('.header-toys-controls-search');
 
   if (localStorage.getItem('filtersSettings') === null) {
     localStorage.setItem('filtersSettings', JSON.stringify(defaultfiltersSettings));

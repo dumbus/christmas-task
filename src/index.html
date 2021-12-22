@@ -13,91 +13,95 @@
 <body>
   <div class="container">
     <header class="header">
-      <nav class="header-nav">
-        <div class="header-nav-item header-nav-logo" src="./assets/svg/tree.svg" alt="tree"></div>
-        <div class="header-nav-item header-nav-item-active header-nav-toys">Игрушки</div>
-        <div class="header-nav-item header-nav-tree">Ёлка</div>
-      </nav>
-      <div class="header-controls">
-        <input type="search" class="header-controls-search" autocomplete="off" placeholder="Поиск по названию">
-        <div class="header-controls-favourites">
-          <span>0</span>
+      <div class="header-toys">
+        <nav class="header-toys-nav">
+          <div class="header-toys-nav-item header-toys-nav-logo" src="./assets/svg/tree.svg" alt="tree"></div>
+          <div class="header-toys-nav-item header-toys-nav-item-active header-toys-nav-toys">Игрушки</div>
+          <div class="header-toys-nav-item header-toys-nav-tree">Ёлка</div>
+        </nav>
+        <div class="header-toys-controls">
+          <input type="search" class="header-toys-controls-search" autocomplete="off" placeholder="Поиск по названию">
+          <div class="header-toys-controls-favourites">
+            <span>0</span>
+          </div>
         </div>
       </div>
     </header>
-    <main class="main">
-      <div class="controls">
-        <div class="filters controls-item">
-          <div class="controls-title">Фильтры по значению</div>
-          <div class="shape filters-item">
-            <div class="controls-subtitle">Форма:</div>
-            <div class="shape-buttons">
-              <button class="shape-buttons-btn" data-filter="шар"></button>
-              <button class="shape-buttons-btn" data-filter="колокольчик"></button>
-              <button class="shape-buttons-btn" data-filter="шишка"></button>
-              <button class="shape-buttons-btn" data-filter="снежинка"></button>
-              <button class="shape-buttons-btn" data-filter="фигурка"></button>
+    <main class="main-container">
+      <div class="main main-toys">
+        <div class="controls">
+          <div class="filters controls-item">
+            <div class="controls-title">Фильтры по значению</div>
+            <div class="shape filters-item">
+              <div class="controls-subtitle">Форма:</div>
+              <div class="shape-buttons">
+                <button class="shape-buttons-btn" data-filter="шар"></button>
+                <button class="shape-buttons-btn" data-filter="колокольчик"></button>
+                <button class="shape-buttons-btn" data-filter="шишка"></button>
+                <button class="shape-buttons-btn" data-filter="снежинка"></button>
+                <button class="shape-buttons-btn" data-filter="фигурка"></button>
+              </div>
+            </div>
+            <div class="color filters-item">
+              <div class="controls-subtitle">Цвет:</div>
+              <div class="color-buttons">
+                <button class="color-buttons-btn" data-filter="белый"></button>
+                <button class="color-buttons-btn" data-filter="желтый"></button>
+                <button class="color-buttons-btn" data-filter="красный"></button>
+                <button class="color-buttons-btn" data-filter="синий"></button>
+                <button class="color-buttons-btn" data-filter="зелёный"></button>
+              </div>
+            </div>
+            <div class="size filters-item">
+              <div class="controls-subtitle">Размер:</div>
+              <div class="size-buttons">
+                <button class="size-buttons-btn" data-filter="большой"></button>
+                <button class="size-buttons-btn" data-filter="средний"></button>
+                <button class="size-buttons-btn" data-filter="малый"></button>
+              </div>
+            </div>
+            <div class="filters-favourite filters-item">
+              <div class="controls-subtitle">Только любимые:</div>
+              <input class="filters-favourite-input" type="checkbox" id="checkbox">
+              <label class="filters-favourite-label" for="checkbox"></label>
             </div>
           </div>
-          <div class="color filters-item">
-            <div class="controls-subtitle">Цвет:</div>
-            <div class="color-buttons">
-              <button class="color-buttons-btn" data-filter="белый"></button>
-              <button class="color-buttons-btn" data-filter="желтый"></button>
-              <button class="color-buttons-btn" data-filter="красный"></button>
-              <button class="color-buttons-btn" data-filter="синий"></button>
-              <button class="color-buttons-btn" data-filter="зелёный"></button>
+  
+          <div class="range controls-item">
+            <div class="controls-title">Фильтры по диапазону</div>
+            <div class="count">
+              <div class="slider-subtitle">Количество экземпляров:</div>
+              <div class="slider-container">
+                <input type="number" id="count-output-0" class="slider-output" value="1" readonly>
+                <div id="count-slider"></div>
+                <input type="number" id="count-output-1" class="slider-output" value="12" readonly>
+              </div>
+  
+              <div class="slider-subtitle">Год приобретения:</div>
+              <div class="slider-container">
+                <input type="number" id="year-output-0" class="slider-output" value="1940" readonly>
+                <div id="year-slider"></div>
+                <input type="number" id="year-output-1" class="slider-output" value="2020" readonly>
+              </div>
             </div>
           </div>
-          <div class="size filters-item">
-            <div class="controls-subtitle">Размер:</div>
-            <div class="size-buttons">
-              <button class="size-buttons-btn" data-filter="большой"></button>
-              <button class="size-buttons-btn" data-filter="средний"></button>
-              <button class="size-buttons-btn" data-filter="малый"></button>
-            </div>
-          </div>
-          <div class="filters-favourite filters-item">
-            <div class="controls-subtitle">Только любимые:</div>
-            <input class="filters-favourite-input" type="checkbox" id="checkbox">
-            <label class="filters-favourite-label" for="checkbox"></label>
+  
+          <div class="sort controls-item">
+            <div class="controls-title">Сортировка</div>
+            <select class="sort-select">
+              <option selected value="sort-name-growth">По названию от «А» до «Я»</option>
+              <option value="sort-name-decrease">По названию от «Я» до «А»</option>
+              <option value="sort-year-growth">По году по возрастанию</option>
+              <option value="sort-year-decrease">По году по убыванию</option>
+            </select>
+            <button class="sort-reset sort-reset-filters">Сброс фильтров</button>
+            <button class="sort-reset sort-reset-settings">Сброс настроек</button>
           </div>
         </div>
-
-        <div class="range controls-item">
-          <div class="controls-title">Фильтры по диапазону</div>
-          <div class="count">
-            <div class="slider-subtitle">Количество экземпляров:</div>
-            <div class="slider-container">
-              <input type="number" id="count-output-0" class="slider-output" value="1" readonly>
-              <div id="count-slider"></div>
-              <input type="number" id="count-output-1" class="slider-output" value="12" readonly>
-            </div>
-
-            <div class="slider-subtitle">Год приобретения:</div>
-            <div class="slider-container">
-              <input type="number" id="year-output-0" class="slider-output" value="1940" readonly>
-              <div id="year-slider"></div>
-              <input type="number" id="year-output-1" class="slider-output" value="2020" readonly>
-            </div>
-          </div>
-        </div>
-
-        <div class="sort controls-item">
-          <div class="controls-title">Сортировка</div>
-          <select class="sort-select">
-            <option selected value="sort-name-growth">По названию от «А» до «Я»</option>
-            <option value="sort-name-decrease">По названию от «Я» до «А»</option>
-            <option value="sort-year-growth">По году по возрастанию</option>
-            <option value="sort-year-decrease">По году по убыванию</option>
-          </select>
-          <button class="sort-reset sort-reset-filters">Сброс фильтров</button>
-          <button class="sort-reset sort-reset-settings">Сброс настроек</button>
-        </div>
+  
+        <div class="cards"></div>
+        <div class="additional-height"></div>
       </div>
-
-      <div class="cards"></div>
-      <div class="additional-height"></div>
     </main>
 
     <div class="modal hidden">

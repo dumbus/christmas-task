@@ -96,7 +96,7 @@ const toys = () => {
     location.reload();
   });
 
-  (<HTMLInputElement>document.querySelector('.header-controls-search')).focus();
+  (<HTMLInputElement>document.querySelector('.header-toys-controls-search')).focus();
   search();
 };
 
