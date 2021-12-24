@@ -1,7 +1,11 @@
 import '../sass/style.scss';
 import toys from './modules/toys';
+import tree from './modules/tree';
+import switchPages from './modules/switchPages';
 
 toys();
+tree();
+switchPages();
 
 console.log(`
   Score: 200/200
