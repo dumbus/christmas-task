@@ -13,17 +13,27 @@ body {
 
 .container {
   position: relative;
-  width: 1410px;
   min-height: 100vh;
-  margin: 0 auto; 
-  padding: 0 5px;
   color: $white;
+}
+
+.main-container {
+  width: 1410px;
+  margin: 0 auto;
+  padding: 0 5px;
+}
+
+.additional-height {
+  width: 100%;
+  height: 100px;
 }
 
 @import "nouislider/dist/nouislider";
 @import "blocks/header";
+@import "blocks/start";
 @import "blocks/toys";
 @import "blocks/tree";
+@import "blocks/garland";
 @import "blocks/footer";
 @import "blocks/sliders";
 @import "blocks/modal";

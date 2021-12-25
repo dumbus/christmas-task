@@ -1,0 +1,122 @@
+.garland {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  pointer-events: none;
+  z-index: 90;
+  overflow: hidden;
+}
+.lightrope {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 50%;
+  list-style: none;
+  margin: 50px auto 0;
+  &:nth-child(1) {
+    top: -400px;
+  }
+  &:nth-child(2) {
+    top: -300px;
+  }
+  &:nth-child(3) {
+    top: -200px;
+  }
+  &:nth-child(4) {
+    top: -100px;
+  }
+  &:nth-child(5) {
+    top: 0;
+  }
+  &:nth-child(6) {
+    top: 100px;
+  }
+  li {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    list-style: none;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    margin: -5px;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    &:nth-child(3n + 1) {
+      animation-duration: 1.4s;
+    }
+    &:nth-child(2n + 1) {
+      animation-duration: 1.8s;
+    }
+  }
+}
+.red {
+  animation-name: red;
+}
+.blue {
+  animation-name: blue;
+}
+.yellow {
+  animation-name: yellow;
+}
+.green {
+  animation-name: green;
+}
+.multi:nth-child(1n + 1) {
+  animation-name: red;
+}
+.multi:nth-child(2n + 2) {
+  animation-name: blue;
+}
+.multi:nth-child(4n + 2) {
+  animation-name: yellow;
+}
+@keyframes red { 
+  0%, 
+  100% { 
+    background: rgba(253, 0, 0, 1);
+    box-shadow: 0px 2px 12px 1px rgb(253, 0, 0);
+  } 
+  50% { 
+    background: rgba(253,0,0, 0.4);
+    box-shadow: 0px 2px 12px 1px rgb(253, 0, 0 / 20%);
+  }
+}
+@keyframes blue { 
+  0%, 
+  100% { 
+    background: rgba(0, 0, 255, 1);
+    box-shadow: 0px 2px 12px 1px rgb(0, 0, 255);
+  } 
+  50% { 
+    background: rgba(0, 0, 255, 0.4);
+    box-shadow: 0px 2px 12px 1px rgb(0, 0, 255 / 20%);
+  }
+}
+@keyframes yellow { 
+  0%, 
+  100% { 
+    background: rgba(255, 255, 0, 1);
+    box-shadow: 0px 2px 12px 1px rgb(255, 255, 0);
+  } 
+  50% { 
+    background: rgba(255, 255, 0, 0.4);
+    box-shadow: 0px 2px 12px 1px rgb(255, 255, 0 / 20%);
+  }
+}
+@keyframes green { 
+  0%, 
+  100% { 
+    background: rgba(0, 255, 0, 1);
+    box-shadow: 0px 2px 12px 1px rgb(0, 255, 0);
+  } 
+  50% { 
+    background: rgba(0, 255, 0, 0.4);
+    box-shadow: 0px 2px 12px 1px rgb(0, 255, 0 / 20%);
+  }
+}

@@ -1,3 +1,8 @@
+.header {
+  width: 1410px;
+  margin: 0 auto;
+  padding: 0 5px;
+}
 .header-toys {
   width: calc(100% - 20px);
   height: 70px;
@@ -15,6 +20,10 @@
       padding: 20px;
       font-size: 20px;
       cursor: pointer;
+      transition: color 0.5s;
+      &:hover {
+        color: $blue;
+      }
       &-active::after {
         content: "";
         position: absolute;
@@ -32,6 +41,10 @@
       background-image: url(./assets/svg/tree.svg);
       background-size: contain;
       background-repeat: no-repeat;
+      transition: filter 0.5s;
+      &:hover {
+        filter: invert(42%) sepia(55%) saturate(579%) hue-rotate(141deg) brightness(99%) contrast(86%);
+      }
     }
   }
   &-controls {

@@ -1,0 +1,85 @@
+.start {
+  position: relative;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 170px);
+  background-image: url(./assets/bg.jpg);
+  .ball {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .ball1 {
+    width: 300px;
+    height: 300px;
+    left: calc(50% - 550px);
+    top: 150px;
+    background-image: url(./assets/ball/1.png);
+    &::before {
+      content: "";
+      position: absolute;
+      top: -150px;
+      left: calc(50% - 29px);
+      width: 4px;
+      height: 153px;
+      width: 5px;
+      background-color: #aaa;
+    }
+  }
+  .ball2 {
+    width: 200px;
+    height: 200px;
+    left: calc(50% + 150px);
+    top: 150px;
+    background-image: url(../assets/ball/2.png);
+    &::before {
+      content: "";
+      position: absolute;
+      top: -150px;
+      left: calc(50% - 23px);
+      width: 3px;
+      height: 153px;
+      background-color: #aaa;
+    }
+  }
+  &-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 250px;
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+    border: 3px solid #278D9F;
+    border-radius: 25px;
+    background-color: rgba(31, 112, 127, .3);
+    font-size: 24px;
+  }
+  &-btn {
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 200px);
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 60px;
+    border: 3px solid #278D9F;
+    border-radius: 30px;
+    background-color: rgba(31, 112, 127, .3);
+    font-weight: 300;
+    font-size: 22px;
+    color: #fff;
+    transition: background-color 0.25s;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(31, 112, 127, 1);
+    }
+  }
+}

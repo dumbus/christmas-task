@@ -1,4 +1,5 @@
 import { applyForm, applyBg, createSnowFlake, applyMusic } from './treeUtils/settings';
+import { applyGarland, clearGarland } from './treeUtils/garland';
 
 interface ITreeSettings {
   soundApplied: boolean;
@@ -31,6 +32,8 @@ export const tree = () => {
   const bgBtns = document.querySelectorAll('.tree-settings-bg-item');
   const snowBtn = document.querySelector('.tree-settings-buttons-snow');
   const audioBtn = document.querySelector('.tree-settings-buttons-audio');
+  const garlandBtns = document.querySelectorAll('.tree-settings-garland-buttons-item');
+  const cancelGarlandBtn = document.querySelector('.tree-settings-garland-switch');
 
   treeFormBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -105,4 +108,12 @@ export const tree = () => {
     applyMusic(treeSettings.soundApplied);
     localStorage.setItem('treeSettings', JSON.stringify(treeSettings));
   });
+
+  garlandBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      applyGarland(btn.getAttribute('data-color'));
+    });
+  });
+
+  cancelGarlandBtn.addEventListener('click', clearGarland);
 };
