@@ -1,4 +1,3 @@
-import data from '../../../data.json';
 import { ICardParams } from '../toysUtils/cards';
 
 const toysCardsContainer = document.querySelector('.tree-toys');
