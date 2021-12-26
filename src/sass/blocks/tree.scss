@@ -35,10 +35,10 @@
       }
     }
     &-audio {
-      background-image: url(../../assets/svg/audio.svg);
+      background-image: url(./assets/svg/audio.svg);
     }
     &-snow {
-      background-image: url(../../assets/svg/snow.svg);
+      background-image: url(./assets/svg/snow.svg);
     }
   }
   &-form {
@@ -63,22 +63,22 @@
         box-shadow: 0 0 10px 4px rgb(39, 141 ,159);
       }
       &:nth-child(1) {
-        background-image: url(../../assets/tree/1.png);
+        background-image: url(./assets/tree/1.png);
       }
       &:nth-child(2) {
-        background-image: url(../../assets/tree/2.png);
+        background-image: url(./assets/tree/2.png);
       }
       &:nth-child(3) {
-        background-image: url(../../assets/tree/3.png);
+        background-image: url(./assets/tree/3.png);
       }
       &:nth-child(4) {
-        background-image: url(../../assets/tree/4.png);
+        background-image: url(./assets/tree/4.png);
       }
       &:nth-child(5) {
-        background-image: url(../../assets/tree/5.png);
+        background-image: url(./assets/tree/5.png);
       }
       &:nth-child(6) {
-        background-image: url(../../assets/tree/6.png);
+        background-image: url(./assets/tree/6.png);
       }
     }
   }
@@ -104,34 +104,34 @@
         box-shadow: 0 0 10px 4px rgb(39, 141 ,159);
       }
       &:nth-child(1) {
-        background-image: url(../../assets/bg/1.jpg);
+        background-image: url(./assets/bg/1.jpg);
       }
       &:nth-child(2) {
-        background-image: url(../../assets/bg/2.jpg);
+        background-image: url(./assets/bg/2.jpg);
       }
       &:nth-child(3) {
-        background-image: url(../../assets/bg/3.jpg);
+        background-image: url(./assets/bg/3.jpg);
       }
       &:nth-child(4) {
-        background-image: url(../../assets/bg/4.jpg);
+        background-image: url(./assets/bg/4.jpg);
       }
       &:nth-child(5) {
-        background-image: url(../../assets/bg/5.jpg);
+        background-image: url(./assets/bg/5.jpg);
       }
       &:nth-child(6) {
-        background-image: url(../../assets/bg/6.jpg);
+        background-image: url(./assets/bg/6.jpg);
       }
       &:nth-child(7) {
-        background-image: url(../../assets/bg/7.jpg);
+        background-image: url(./assets/bg/7.jpg);
       }
       &:nth-child(8) {
-        background-image: url(../../assets/bg/8.jpg);
+        background-image: url(./assets/bg/8.jpg);
       }
       &:nth-child(9) {
-        background-image: url(../../assets/bg/9.jpg);
+        background-image: url(./assets/bg/9.jpg);
       }
       &:nth-child(10) {
-        background-image: url(../../assets/bg/10.jpg);
+        background-image: url(./assets/bg/10.jpg);
       }
     }
   }
@@ -218,7 +218,7 @@
   display: flex;
   justify-content: center;
   width: 600px;
-  background-image: url(../assets/bg/1.jpg);
+  background-image: url(./assets/bg/1.jpg);
   background-size: cover;
   background-position: center;
   &-img {
