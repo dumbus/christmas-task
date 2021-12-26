@@ -17,15 +17,17 @@ export class ToyCard {
   createCard() {
     this.card = document.createElement('div');
     this.card.classList.add('tree-toys-card');
-    this.card.setAttribute('data-num', this.cardParams.count);
+    this.card.setAttribute('data-num', this.cardParams.num);
 
     this.pcount = document.createElement('p');
+    this.pcount.setAttribute('data-num', this.cardParams.num);
     this.pcount.classList.add('tree-toys-card-count');
     this.pcount.innerHTML = this.cardParams.count;
     this.card.append(this.pcount);
 
     for (let i = 0; i < +this.cardParams.count; i++) {
       this.img = document.createElement('img');
+      this.img.classList.add('tree-toys-img');
       this.img.setAttribute('src', `./assets/toys/${+this.cardParams.num}.png`);
       this.img.setAttribute('id', `${+this.cardParams.num}-${i + 1}`);
       this.img.setAttribute('alt', 'toy');

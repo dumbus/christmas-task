@@ -1,4 +1,5 @@
 import { renderToysCards } from './treeUtils/render';
+import drag from './treeUtils/drag';
 
 const switchPages = () => {
   const switchToToys = document.querySelector('.header-toys-nav-toys');
@@ -9,6 +10,8 @@ const switchPages = () => {
   const toysBlock = document.querySelector('.main-toys');
   const treeBlock = document.querySelector('.main-tree');
   const startBlock = document.querySelector('.start');
+
+  renderToysCards();
 
   startBtn.addEventListener('click', () => {
     toysBlock.classList.remove('hidden');
@@ -38,10 +41,14 @@ const switchPages = () => {
   });
 
   switchToTree.addEventListener('click', () => {
+    const mapBlock = document.querySelector('map');
+    mapBlock.innerHTML = '<area coords="246,-1,2,621,139,701,368,696,494,629" shape="poly">';
+
     treeBlock.classList.remove('hidden');
     toysBlock.classList.add('hidden');
     startBlock.classList.add('hidden');
     renderToysCards();
+    drag();
 
     switchToTree.classList.add('header-toys-nav-item-active');
     switchToToys.classList.remove('header-toys-nav-item-active');

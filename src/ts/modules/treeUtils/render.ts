@@ -10,6 +10,8 @@ if (localStorage.getItem('favoritesNumbers') !== null) {
 }
 
 export function renderToysCards() {
+  favoritesNumbers = JSON.parse(localStorage.getItem('favoritesNumbers'));
+
   document.querySelector('.tree-toys').innerHTML = '';
   if (favoritesNumbers.length < 1) {
     for (let i = 0; i < 20; i++) {
