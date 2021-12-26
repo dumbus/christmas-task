@@ -11,8 +11,6 @@ const switchPages = () => {
   const treeBlock = document.querySelector('.main-tree');
   const startBlock = document.querySelector('.start');
 
-  renderToysCards();
-
   startBtn.addEventListener('click', () => {
     toysBlock.classList.remove('hidden');
     treeBlock.classList.add('hidden');
