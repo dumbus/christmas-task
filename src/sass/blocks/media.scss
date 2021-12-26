@@ -7,6 +7,10 @@
     width: 964px;
     padding: 0 5px;
   }
+  .main-container {
+    width: 964px;
+    padding: 0 20px;
+  }
   .controls {
     flex-wrap: wrap;
     row-gap: 20px;
@@ -54,6 +58,10 @@
   .footer {
     width: 728px;
     padding: 0 5px;
+  }
+  .main-container {
+    width: 728px;
+    padding: 0 10px;
   }
   .start {
     width: calc(100wv - 20px);
