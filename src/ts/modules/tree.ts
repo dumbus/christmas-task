@@ -17,6 +17,7 @@ const defaultTreeSettings: ITreeSettings = {
 
 export const tree = () => {
   let treeSettings = defaultTreeSettings;
+  const treeClear = document.querySelector('.tree-settings-clear');
 
   if (localStorage.getItem('treeSettings') === null) {
     localStorage.setItem('treeSettings', JSON.stringify(defaultTreeSettings));
@@ -116,4 +117,8 @@ export const tree = () => {
   });
 
   cancelGarlandBtn.addEventListener('click', clearGarland);
+  treeClear.addEventListener('click', () => {
+    localStorage.clear();
+    location.reload();
+  });
 };

@@ -7,6 +7,7 @@ if (localStorage.getItem('favoritesNumbers') !== null) {
   favoritesNumbers = JSON.parse(localStorage.getItem('favoritesNumbers'));
 } else {
   favoritesNumbers = [];
+  localStorage.setItem('favoritesNumbers', JSON.stringify(favoritesNumbers));
 }
 
 export function renderToysCards() {
