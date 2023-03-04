@@ -1,7 +1,7 @@
 import { Card, ICardParams } from './cards';
 
 let favoritesNumbers: number[];
-const headerFavorites = document.querySelector('.header-controls-favourites span');
+const headerFavorites = document.querySelector('.header-toys-controls-favourites span');
 
 if (localStorage.getItem('favoritesNumbers') !== null) {
   favoritesNumbers = JSON.parse(localStorage.getItem('favoritesNumbers'));
