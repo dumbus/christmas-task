@@ -1,0 +1,30 @@
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: 'Comfortaa', cursive;
+}
+
+body {
+  background-color: $main-color;
+}
+
+.container {
+  position: relative;
+  width: 1410px;
+  min-height: 100vh;
+  margin: 0 auto; 
+  padding: 0 5px;
+  color: $white;
+}
+
+@import "nouislider/dist/nouislider";
+@import "blocks/header";
+@import "blocks/main";
+@import "blocks/footer";
+@import "blocks/sliders";
+@import "blocks/modal";
+@import "blocks/animations";
+@import "blocks/media";
